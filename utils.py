@@ -1,4 +1,6 @@
+import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 def get_top_cells(df, least_score=0.85):
     col_names = np.array(list(df.columns)[1:])
@@ -14,4 +16,8 @@ def get_top_cells(df, least_score=0.85):
     table = np.array(table)
     return table
 
-
+def train_result_plotting(values, name):
+    plt.plot(values)
+    plt.xlabel('epoch')
+    plt.ylabel(name)
+    plt.show()
