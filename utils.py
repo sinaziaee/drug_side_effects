@@ -21,3 +21,23 @@ def train_result_plotting(values, name):
     plt.xlabel('epoch')
     plt.ylabel(name)
     plt.show()
+
+def plot_different_results(loss_list, auc_list, aupr_list, min_score):
+    plt.figure(figsize=(18, 5))
+    plt.subplot(131)
+    plt.plot(loss_list)
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    ####################
+    plt.subplot(132)
+    plt.plot(auc_list)
+    plt.xlabel('Epoch')
+    plt.ylabel('AUC')
+    ####################
+    plt.subplot(133)
+    plt.plot(aupr_list)
+    plt.xlabel('Epoch')
+    plt.ylabel('AUPR')
+    ####################
+    plt.suptitle(f'Training on drugs with at least {min_score} similarity')
+    plt.show()
